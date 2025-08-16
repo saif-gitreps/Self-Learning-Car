@@ -1,2 +1,3 @@
 # Self-Learning-Car
-In dev..
+
+A self driving car thats learns using neural network, built from scratch using Javascript.

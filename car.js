@@ -38,27 +38,14 @@ class Car {
       }
 
       if (this.controls.left) {
-         this.angle -= 0.03;
-      }
-      if (this.controls.right) {
          this.angle += 0.03;
       }
+      if (this.controls.right) {
+         this.angle -= 0.03;
+      }
 
-      this.y -= this.speed;
-      /*
-        Heres how this works:
-
-        Initially speed = 0. When we press forward, speed inscrease by amount of 
-        acceleration. Then Request animate function recalls the window infinitely. 
-        Which causes the update method to be called, subsequently y -= (curr)speed happens.
-
-        this.y -= this.speed; works because mathematically, 
-        Lets say y = 100:
-        => 100 - 2 = 98, and we are going up.
-        
-        For reverse. When we hit down arrow. Speed -= acceleration (retardation). where at some point it becomes retardation, AKA negative.
-        => 100 - (-2) = 102 which is going down.
-      */
+      this.x -= Math.sin(this.angle) * this.speed; // sin has a angle range betwwen -1 and 1
+      this.y -= Math.cos(this.angle) * this.speed;
    }
 
    draw(ctx) {
@@ -69,6 +56,6 @@ class Car {
       ctx.beginPath();
       ctx.rect(-this.width / 2, -this.height / 2, this.width, this.height);
       ctx.fill();
-      ctx.restore();
+      ctx.restore(); // save and restore prevents infinite auto rotation
    }
 }

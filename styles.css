@@ -4,3 +4,7 @@ body {
    text-align: center;
    background: black;
 }
+
+#my-canvas {
+   background: lightgray;
+}

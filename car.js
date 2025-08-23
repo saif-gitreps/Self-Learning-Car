@@ -13,11 +13,13 @@ class Car {
       this.maxSpeed = 4;
       this.friction = 0.05;
 
+      this.sensor = new Sensor(this);
       this.controls = new Control();
    }
 
    update() {
       this.#move();
+      this.sensor.update();
    }
 
    #move() {
@@ -64,5 +66,7 @@ class Car {
       ctx.rect(-this.width / 2, -this.height / 2, this.width, this.height);
       ctx.fill();
       ctx.restore(); // save and restore prevents infinite auto rotation
+
+      this.sensor.draw(ctx);
    }
 }

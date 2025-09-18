@@ -1,5 +1,5 @@
 class Car {
-   constructor(x, y, width, height) {
+   constructor(x, y, width, height, controlType, maxSpeed = 3) {
       // TODO: Add childrens of cars with different speed limits and accelerations
       // TODO: Also add sub cars such Branded by extending type of Cars
       this.x = x;
@@ -10,12 +10,12 @@ class Car {
 
       this.speed = 0;
       this.acceleration = 0.2;
-      this.maxSpeed = 4;
+      this.maxSpeed = maxSpeed;
       this.friction = 0.05;
       this.damaged = false;
 
       this.sensor = new Sensor(this);
-      this.controls = new Control();
+      this.controls = new Control(controlType);
    }
 
    update(roadBorders) {

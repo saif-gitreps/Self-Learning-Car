@@ -5,6 +5,10 @@ body {
    background: black;
 }
 
-#my-canvas {
+#network-canvas {
+   background: black;
+}
+
+#car-canvas {
    background: lightgray;
 }

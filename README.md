@@ -1,3 +1,3 @@
-# Self-Learning-Car
+# Self Learning Car Simulation with Neural Network
 
-A self driving car thats learns using neural network, built from scratch using Javascript.
+A self learning car thats learns using neural network, uses population based learning or genetic algorithm, the best generation is saved manually. Built from scratch using Javascript.
